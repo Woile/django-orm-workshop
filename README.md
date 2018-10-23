@@ -2,7 +2,18 @@
 
 > Introduction on how to start using the ORM
 
-## Demo
+## About
+
+In this workshop we are gonna learn how to use the ORM. And how to do some common SQL operations:
+
+Some of the operations
+
+- Insertion
+- Updating
+- Selecting with join
+- Counting
+- Agregations
+- Sum
 
 ## Installation
 

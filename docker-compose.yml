@@ -1,0 +1,31 @@
+version: '3'
+services:
+  api:
+    tty: true
+    build: ./demo
+    command: ./run_api.sh
+    depends_on:
+      - "db"
+    environment:
+      - DJANGO_ENVIRONMENT=dev
+    ports:
+      - "8084:80"
+      - "8000:8000"
+    volumes:
+      - ./demo/:/demo/
+  db:
+    image: postgres
+    environment:
+      - DB_NAME=postgres
+  jupyter:
+    tty: true
+    build: ./demo
+    command: ./run_notebook.sh
+    depends_on:
+      - "db"
+    environment:
+      - DJANGO_ENVIRONMENT=dev
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./demo/:/demo/

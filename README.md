@@ -23,13 +23,9 @@ Some of the operations
 
 ## Usage
 
-### Create superuser for the admin panel
+### Run the Django server and the Jupyter Notebook
 
-`make createsuperuser`
-
-### Run the Django server and the notebook (used in the workshop)
-
-This is useful to access the admin
+We are gonna use this in the **workshop**
 
 `make run-dev`
 
@@ -50,6 +46,11 @@ After creating/modifying a model run
 To apply the mirgations:
 
 `make migrate`
+
+### Create superuser for the admin panel
+
+`make createsuperuser`
+
 
 ## Presentation
 

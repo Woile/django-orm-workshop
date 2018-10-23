@@ -77,12 +77,112 @@
           ## Journey
 
           1. What is Django <!-- .element: class="fragment" -->
+          1. ORM <!-- .element: class="fragment" -->
           1. Models <!-- .element: class="fragment" -->
+          1. Querying <!-- .element: class="fragment" -->
           1. Admin <!-- .element: class="fragment" -->
           1. Migrations <!-- .element: class="fragment" -->
-          1. ORM <!-- .element: class="fragment" -->
           1. Workshop! <!-- .element: class="fragment" -->
         </textarea>
+      </section>
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Django
+
+            Web Framework with batteries
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Django Features
+
+            - Rapid development <!-- .element: class="fragment" -->
+            - Clean, pragmatic design <!-- .element: class="fragment" -->
+            - Powerful and simple ORM <!-- .element: class="fragment" -->
+            - LOTS of packages <!-- .element: class="fragment" -->
+            - BIG community <!-- .element: class="fragment" -->
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ### We are gonna focus on the ORM
+          </textarea>
+        </section>
+      </section>
+      <section>
+        <h2>What is an ORM?</h2>
+        <p class="fragment">Object-relational mapping</p>
+        <p class="fragment">OOP <-> Relational Databases</p>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+            ### Django Models
+
+            ```python
+            from django.db import models
+
+            class Person(models.Model):
+                first_name = models.CharField(max_length=30)
+                last_name = models.CharField(max_length=30)
+            ```
+          </textarea>
+      </section>
+      <section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Querying
+
+            ```python
+            queryset = Person.objects.all()
+            ```
+
+
+            - Queryset are lazy evaluated <!-- .element: class="fragment" -->
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ### Creation
+
+            ```python
+            person = Person(first_name="Harry", last_name="Potter")
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ### Filtering
+
+            ```python
+            queryset = Person.objects.filter(first_name="Harry")
+            ```
+          </textarea>
+        </section>
+      </section>
+      <section>
+        <h3>Django Admin</h3>
+        <p class="fragment">Web site to manipulate models</p>
+      </section>
+      <section>
+        <section>
+          <h3>Django Migrations</h3>
+          <p class="fragment">A way of propagating changes you make to your models</p>
+          <p class="fragment">Version control system for your database schema</p>
+          <p class="fragment">Keep your code in sync with your schema</p>
+          <p class="fragment">Reproducible results!!</p>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ### Commands
+
+            ```bash
+            python manage.py makemigrations
+            python manage.py migrate
+            ```
+          </textarea>
+        </section>
       </section>
       <section>
         <h3>Questions so far?</h3>

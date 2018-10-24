@@ -185,3 +185,6 @@ typings/
 
 # Serverless directories
 .serverless
+
+# SQlite
+*.sqlite3

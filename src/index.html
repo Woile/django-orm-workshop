@@ -70,7 +70,6 @@
         <h2>Who we are?</h2>
         <p class="fragment">Petrica Leuca: Software Engineer</p>
         <p class="fragment">Santiago Friare: Software Engineer</p>
-        <p class="fragment">Team DDCI@KPN</p>
       </section>
       <section data-markdown>
         <textarea data-template>
@@ -168,10 +167,12 @@
       <section>
         <section>
           <h3>Django Migrations</h3>
-          <p class="fragment">A way of propagating changes you make to your models</p>
-          <p class="fragment">Version control system for your database schema</p>
-          <p class="fragment">Keep your code in sync with your schema</p>
-          <p class="fragment">Reproducible results!!</p>
+          <ul>
+            <li class="fragment">A way of propagating changes you make to your models</li>
+            <li class="fragment">Version control system for your database schema</li>
+            <li class="fragment">Keep your code in sync with your schema</li>
+            <li class="fragment">Reproducible results!!</li>
+          </ul>
         </section>
         <section data-markdown>
           <textarea data-template>
@@ -182,6 +183,17 @@
             python manage.py migrate
             ```
           </textarea>
+        </section>
+        <section>
+          <h3>Good practices</h3>
+          <ul>
+            <li class="fragment">Don't manipulate data manually, use Data Migrations</li>
+            <li class="fragment">Avoid modifying migrations!!</li>
+          </ul>
+          <aside class="notes">
+            <p>Results must be reproducible on every environment, touching one might break everything</p>
+            <p>If migrations don't work is probably because the code is not good, not the migration.</p>
+          </aside>
         </section>
       </section>
       <section>

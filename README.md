@@ -39,7 +39,9 @@ Jupyter: `0.0.0.0:8888/tree` Token should appear in the log of the docker
 
 ### Migrations mini-tutorial
 
-After creating/modifying a model run
+Note: This is done automatically by `make init`, it's just for you to play around
+
+After creating/modifying a model run:
 
 `make makemigrations`
 
@@ -49,7 +51,7 @@ To apply the mirgations:
 
 To import the data:
 
-`./manage.py loaddata humanresources/humanresources.json`
+`make fixtures`
 
 ### Create superuser for the admin panel
 

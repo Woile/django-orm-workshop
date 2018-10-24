@@ -12,7 +12,10 @@ createsuperuser:
 dev:
 	docker-compose up
 
-init: clean build migrate dev
+fixtures:
+	docker-compose run api python manage.py loaddata humanresources
+
+init: clean build migrate fixtures dev
 
 makemigrations:
 	# example make makemigrations app=review

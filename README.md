@@ -47,6 +47,10 @@ To apply the mirgations:
 
 `make migrate`
 
+To import the data:
+
+`./manage.py loaddata humanresources/humanresources.json`
+
 ### Create superuser for the admin panel
 
 `make createsuperuser`

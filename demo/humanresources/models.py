@@ -7,7 +7,7 @@ class Regions(models.Model):
     region_name = models.CharField(max_length=25)
 
     def __str__(self):
-        return f'region: {self.region_name}'
+        return f'{self.region_name}'
 
 
 class Countries(models.Model):
@@ -16,7 +16,7 @@ class Countries(models.Model):
     region = models.ForeignKey(Regions, blank=True, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return f'iso: {self.country_iso_code} name: {self.country_name}'
+        return f'({self.country_iso_code}) {self.country_name}'
 
 
 class Locations(models.Model):
@@ -25,6 +25,9 @@ class Locations(models.Model):
     city = models.CharField(max_length=30)
     state_province = models.CharField(max_length=25)
     country = models.ForeignKey(Countries, blank=True, null=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return f'({self.postal_code}) {self.street_address}'
 
 
 class Departments(models.Model):
@@ -43,7 +46,7 @@ class Jobs(models.Model):
     max_salary = models.FloatField()
 
     def __str__(self):
-        return f'job_code: {self.job_code} job_title: {self.job_title} min_salary: {self.min_salary} max_salary: {self.max_salary}'
+        return f'({self.job_code}) {self.job_title} ({self.min_salary}, {self.max_salary})'
 
 
 class Employees(models.Model):

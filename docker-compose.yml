@@ -20,7 +20,7 @@ services:
   jupyter:
     tty: true
     build: ./demo
-    user: $UID
+    user: "1000:1000"
     command: ./run_notebook.sh
     depends_on:
       - "db"

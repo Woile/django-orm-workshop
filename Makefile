@@ -1,7 +1,7 @@
 bash:
 	docker-compose run --user=$(shell id -u) ${service} bash
 
-build:
+build-images:
 	docker-compose build
 
 clean: stop remove
@@ -15,7 +15,7 @@ dev:
 fixtures:
 	docker-compose run api python manage.py loaddata humanresources
 
-init: clean build migrate fixtures dev
+init: clean build-images migrate fixtures dev
 
 makemigrations:
 	# example make makemigrations app=review
@@ -33,4 +33,4 @@ remove:
 stop:
 	docker-compose stop
 
-run-dev: build migrate dev
+run-dev: build-images migrate dev

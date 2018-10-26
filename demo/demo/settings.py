@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # third party
+    'django_extensions',  # compaitbility with notebook
+
+    # local
     "humanresources",
 ]
 
@@ -120,6 +125,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = "/static/"
+
+NOTEBOOK_ARGUMENTS = [
+    # exposes IP and port
+    '--ip=0.0.0.0',
+    '--port=8888',
+    # disables the browser
+    '--no-browser',
+    '--allow-root',
+]
 
 try:
     from .local_settings import *

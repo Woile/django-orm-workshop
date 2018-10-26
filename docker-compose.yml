@@ -14,12 +14,13 @@ services:
     volumes:
       - ./demo/:/demo/
   db:
-    image: postgres
+    image: postgres:alpine
     environment:
       - DB_NAME=postgres
   jupyter:
     tty: true
     build: ./demo
+    user: $UID
     command: ./run_notebook.sh
     depends_on:
       - "db"

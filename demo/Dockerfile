@@ -1,10 +1,12 @@
-FROM python:3.6-alpine
+FROM python:3.7.1-alpine3.8
 
-# Add testing and main repos
+# Add testing and main repos (which include many of our OS deps)
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
+RUN echo "ipv6" >> /etc/modules
 
-RUN apk update && apk add --upgrade apk-tools
+RUN apk update
+RUN apk add --upgrade apk-tools
 
 RUN apk add --no-cache \
             postgresql postgresql-dev libxslt-dev pkgconfig \
